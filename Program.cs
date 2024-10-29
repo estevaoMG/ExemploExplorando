@@ -1,10 +1,18 @@
 ﻿using ExemploExplorando.Models;
 using System.Globalization;
 
+string dataString = "2024-10-290 17:00";
 
-DateTime data = DateTime.Now;
+bool sucesso = DateTime.TryParseExact(dataString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime data);
 
-Console.WriteLine(data.ToString("dd/MM/yyyy HH:mm"));
+if (sucesso)
+{
+    Console.WriteLine($"Conversão com sucesso! Data: {data}");
+}
+else
+{
+    Console.WriteLine($"{dataString} não é uma data válida!");
+}
 
 
 
