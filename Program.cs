@@ -1,18 +1,86 @@
 ﻿using ExemploExplorando.Models;
 using System.Globalization;
 
-string dataString = "2024-10-290 17:00";
 
-bool sucesso = DateTime.TryParseExact(dataString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime data);
+try
+{
+string[] linhas = File.ReadAllLines("Arquivos/d/arquivo_Leitura.txt");
 
-if (sucesso)
+foreach(string linha in linhas)
 {
-    Console.WriteLine($"Conversão com sucesso! Data: {data}");
+    Console.WriteLine(linha);
 }
-else
+} catch(FileNotFoundException ex)
 {
-    Console.WriteLine($"{dataString} não é uma data válida!");
+    Console.WriteLine($"Ocorreu um erro na leitura do arquivo. Arquivo não encontrado. {ex.Message}");
+} catch(DirectoryNotFoundException ex)
+{
+    Console.WriteLine($"Ocorreu um erro na leitura do arquivo. Caminho da pasta não encontrado. {ex.Message}");
+} catch(Exception ex)
+{
+    Console.WriteLine($"Ocorreu uma exceção genérica. {ex.Message}");
 }
+
+Console.WriteLine("Chegou até aqui!");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// string dataString = "2024-10-290 17:00";
+
+// bool sucesso = DateTime.TryParseExact(dataString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime data);
+
+// if (sucesso)
+// {
+//     Console.WriteLine($"Conversão com sucesso! Data: {data}");
+// }
+// else
+// {
+//     Console.WriteLine($"{dataString} não é uma data válida!");
+// }
 
 
 
