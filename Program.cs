@@ -1,14 +1,84 @@
 ﻿using ExemploExplorando.Models;
 using System.Globalization;
+using Newtonsoft.Json;
 
-int numero = 10;
-bool ehPar = false;
+Venda v1 = new Venda(1, "Material de escritório", 25.00M);
+
+string serializado = JsonConvert.SerializeObject(v1, Formatting.Indented);
+
+File.WriteAllText("Arquivos/venda.json", serializado);
+
+Console .WriteLine(serializado);
 
 
-// IF Ternário
-ehPar = numero % 2 == 0;
 
-Console.WriteLine($"O número {numero} é " + (ehPar ? "par!" : "ímpar!"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// int numero = 10;
+// bool par = false;
+
+
+// // IF Ternário
+// par = numero % 2 == 0;
+
+// Console.WriteLine($"O número {numero} é " + (par ? "par!" : "ímpar!"));
 
 
 // if (numero % 2 == 0)
